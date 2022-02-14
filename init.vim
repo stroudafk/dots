@@ -8,6 +8,14 @@ set title
 set statusline=%f%m%r%h%w\ [%Y]\ [0x%02.2B]%<\ %F%4v,%4l\ %3p%%\ of\ %L\ lines
 set laststatus=2
 
+" temporary line to help solve having actually invisible invisibles even when
+" toggled on
+map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+"
+" display invisible characters, continued after colorscheme set at the end
+set listchars=eol:⏎,tab:>-,trail:·,extends:>,precedes:<
+set list
+
 "integrated terminal config
 " open new split panes to right and below
 set splitright
@@ -22,6 +30,8 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
+"open zsh as default terminal
+set shell=/bin/zsh
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -46,9 +56,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jacoborus/tender.vim'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set hidden
 
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
+
+let g:python_highlight_all = 1

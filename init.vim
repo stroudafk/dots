@@ -57,6 +57,8 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jacoborus/tender.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 call plug#end()
 
 set hidden

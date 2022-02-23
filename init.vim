@@ -58,6 +58,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'jacoborus/tender.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SidOfc/mkdx'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'} 
 call plug#end()
 
 set hidden

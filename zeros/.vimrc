@@ -10,12 +10,9 @@ syntax on
 call plug#begin()
 
 Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 colorscheme gruvbox
 set bg=dark
-" let g:airline_theme='gruvbox'

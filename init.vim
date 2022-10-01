@@ -7,6 +7,7 @@ set number
 set title
 set statusline=%f%m%r%h%w\ [%Y]\ [0x%02.2B]%<\ %F%4v,%4l\ %3p%%\ of\ %L\ lines
 set laststatus=2
+set cursorline
 
 " temporary line to help solve having actually invisible invisibles even when
 " toggled on
@@ -58,7 +59,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'jacoborus/tender.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SidOfc/mkdx'
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'} 
+"Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'} 
 call plug#end()
 
 set hidden

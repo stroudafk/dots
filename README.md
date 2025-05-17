@@ -7,10 +7,10 @@ This version control tree is designed with Stow in mind. It can be used without,
 Install [Stow](https://www.gnu.org/software/stow/manual/stow.html) using your package manager.
 
 **NixOS**
-```pkgs.stow```
+`pkgs.stow`
 
 **Mac**
-```brew install stow```
+`brew install stow`
 
 ### Set up
 Clone the repository in your $HOME directory:
@@ -25,4 +25,4 @@ Remember that Stow will propagate your $HOME file tree according to the file tre
 
 For example, a directory at the root level of this repo named `henlo` will cause the directory `$HOME/henlo` to be populated with corresponding symlinks.
 
-If you need any directories or files to be ignored, I have overriden the default [.stow-global-ignore](https://www.gnu.org/software/stow/manual/html_node/Types-And-Syntax-Of-Ignore-Lists.html) with .stow-local-ignore, which contains all of the default ignore properties in addition to instructions to ignore the `archive` directory, as I think it may be neat to peek into the config I used throughout college.
+If you need any directories or files to be ignored, I have overriden the default [.stow-global-ignore](https://www.gnu.org/software/stow/manual/html_node/Types-And-Syntax-Of-Ignore-Lists.html) with `.stow-local-ignore`, which contains all of the default ignore properties in addition to instructions to ignore the `archive` directory, as I think it may be neat to peek into the config I used throughout college.

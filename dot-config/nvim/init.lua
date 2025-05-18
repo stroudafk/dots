@@ -27,14 +27,7 @@ require("lazy").setup({
     -- plugins here
     { import = "plugins" },
     -- must haves
-    {
-      'windwp/nvim-autopairs',
-      event = "InsertEnter",
-      config = true
-      -- use opts = {} for passing setup options
-      -- this is equivalent to setup({}) function
-    },
-    -- nice to haves
+        -- nice to haves
     -- lualine, fzf, context plugins, treesitter, neotree, dashboard
 
     -- eye candy
@@ -204,6 +197,9 @@ require("lazy").setup({
         require("luasnip.loaders.from_vscode").lazy_load()
 
         cmp.setup({
+          sources = cmp.config.sources({
+            { name = 'render-markdown' },
+          }),
           snippet = {
             expand = function(args)
               require('luasnip').lsp_expand(args.body) -- For `luasnip` users.

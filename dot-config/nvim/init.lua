@@ -1,3 +1,5 @@
+require("core")
+
 -- Bootstrap lazy.nvim. So I think it clones the repo if not present?
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,70 +18,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 --  Vim options
 --  set up mapleader (and maplocalleader if needed) before loading lazy.nvim so that mappings are correct
-vim.g.mapleader=" "
--- also note to self: command :y A will add to yank stack, then you can use @: to repeat the command for every new line you want to add
--- "ayy to name a register to write to, "Ayy (capital register name) to write to the named register. does the same as above but will overwrite the buffer if you mistype a lowercase 
--- "ap to paste/put
-vim.opt.number=true
-vim.opt.relativenumber=true
-vim.opt.syntax="on"
-vim.opt.showmatch=true --highlight matching brackets
-vim.o.showmode = false
 
--- fix lsp not recognizing library = vim.api.nvim_get_runtime_file("", true),
--- vim.diagnostic.config({
---   virtual_text = {
---     source = "always",
---   },
--- })
-
-vim.opt.termguicolors=true
-
--- indent settings
-vim.opt.tabstop=2 --number of spaces a tab counts for and maybe shows as?
-vim.opt.shiftwidth=0 -- num of spaces to use for each step of indent
-vim.opt.expandtab=true
-vim.opt.autoindent=true --keep indent level on new line
-
-vim.opt.splitright=true
-vim.opt.splitbelow=true
-
-vim.opt.title=true
-vim.opt.laststatus=2 --to show status bar at bottom of window. change to 3 to have it update for the current/active instance or buffer
-vim.opt.cursorline=true -- highlight line where cursor is
-
--- case insentitive searching unless \C or capital letters included in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
-vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
-vim.opt.mouse = 'a' --enable mouse support?
-
--- key bindings
-vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', {desc = 'Toggle NeoTree'})
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
--- switch window focus
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
--- remove search highlights with esc
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
--- find some way to exit terminal mode easily
-
--- limit results in lsp list
-vim.opt.pumheight = 15
-
-
-
-
-vim.lsp.enable('marksman')
-
+--vim.lsp.enable('marksman')
 
 -- Set up lazy.nvim
 require("lazy").setup({

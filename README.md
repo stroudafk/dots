@@ -19,7 +19,6 @@ If you need any directories or files to be ignored, I have overriden the default
 
 ### Installation
 Install [Stow](https://www.gnu.org/software/stow/manual/stow.html) using your package manager.
-
 **NixOS**
 `pkgs.stow`
 

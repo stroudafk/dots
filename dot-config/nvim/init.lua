@@ -26,79 +26,7 @@ require("lazy").setup({
   spec = {
     -- plugins here
     { import = "plugins" },
-    -- must haves
-        -- nice to haves
-    -- lualine, fzf, context plugins, treesitter, neotree, dashboard
-
-    -- eye candy
-
-    {
-  'goolord/alpha-nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' }, -- optional icons
-  config = function()
-    local alpha = require'alpha'
-    local dashboard = require'alpha.themes.dashboard'
-
-    -- Set header
-    dashboard.section.header.val = {
-      [[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                     ]],
-			[[       ████ ██████           █████      ██                     ]],
-			[[      ███████████             █████                             ]],
-			[[      █████████ ███████████████████ ███   ███████████   ]],
-			[[     █████████  ███    █████████████ █████ ██████████████   ]],
-			[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-			[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-			[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-    }
-      --"                                                     ",
-      --"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-      --"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
-      --"  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
-      --"  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-      --"  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-      --"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-      --"                                                     ",
-    dashboard.section.buttons.val = {
-      -- Set menu     󱦟
-      dashboard.button("n", "󰝒  > New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("f", "󰱼  > Find file", ":lua require('fzf-lua').files()<CR>"),
-      dashboard.button("r", "  > Recent files", ":lua require('fzf-lua').oldfiles()<CR>"),
-      dashboard.button("e", "  > Explorer", ":Neotree toggle<CR>"),
-      dashboard.button("l", "󰒲  > Lazy", ":Lazy<CR>"),
-      dashboard.button("c", "  > Config", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
-      dashboard.button("q", "  > Quit NVIM", ":q<CR>"),
-    }
-
-    -- Footer (optional)
-    dashboard.section.footer.val = "⚡ Neovim loaded with alpha-nvim"
-
-    -- Send config to alpha
-    alpha.setup(dashboard.opts)
-  end
-},
-    {
-      "nvim-treesitter/nvim-treesitter",
-      config = function()
-        require("nvim-treesitter.configs").setup({
-          --ensure_installed = {"c", "cpp", "lua", "vim", "vimdoc", "markdown", "markdown_inline", "java", "javadoc", "javascript", "json", "html", "python"},
-          --ensure_installed = {"lua", "vim", "vimdoc", "markdown", "markdown_inline", "java", "javadoc", "javascript", "json", "html", "python"},
-          ensure_installed = {"markdown", "markdown_inline"},
-          highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false,
-          },
-        })
-      end,
-    }, -- syntax highlighting??? not sure
+    
     {
       --"folke/tokyonight.nvim",
       "catppuccin/nvim",
@@ -123,15 +51,6 @@ require("lazy").setup({
         })
       end,
     },
-    --[[{
-      "nvimdev/dashboard-nvim",
-      event = 'VimEnter',
-      config = function()
-        require('dashboard').setup {
-        }
-      end,
-      dependencies = { { 'nvim-tree/nvim-web-devicons'} }
-    },--]]
     {
       "ibhagwan/fzf-lua",
       dependencies = { "nvim-tree/nvim-web-devicons" }, -- icon support. optional

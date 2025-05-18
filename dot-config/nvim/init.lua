@@ -24,6 +24,14 @@ vim.opt.number=true
 vim.opt.relativenumber=true
 vim.opt.syntax="on"
 vim.opt.showmatch=true --highlight matching brackets
+vim.o.showmode = false
+
+-- fix lsp not recognizing library = vim.api.nvim_get_runtime_file("", true),
+-- vim.diagnostic.config({
+--   virtual_text = {
+--     source = "always",
+--   },
+-- })
 
 vim.opt.termguicolors=true
 
@@ -40,15 +48,35 @@ vim.opt.title=true
 vim.opt.laststatus=2 --to show status bar at bottom of window. change to 3 to have it update for the current/active instance or buffer
 vim.opt.cursorline=true -- highlight line where cursor is
 
+-- case insentitive searching unless \C or capital letters included in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 vim.opt.mouse = 'a' --enable mouse support?
 
 -- key bindings
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', {desc = 'Toggle NeoTree'})
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- switch window focus
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- remove search highlights with esc
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- find some way to exit terminal mode easily
 
 -- limit results in lsp list
 vim.opt.pumheight = 15
+
+
+
 
 vim.lsp.enable('marksman')
 
@@ -57,6 +85,7 @@ vim.lsp.enable('marksman')
 require("lazy").setup({
   spec = {
     -- plugins here
+    { import = "plugins" },
     -- must haves
     {
       'windwp/nvim-autopairs',
@@ -69,7 +98,7 @@ require("lazy").setup({
     -- lualine, fzf, context plugins, treesitter, neotree, dashboard
 
     -- eye candy
-    
+
     {
   'goolord/alpha-nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' }, -- optional icons
@@ -127,6 +156,9 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
       config = function()
         require("nvim-treesitter.configs").setup({
+          --ensure_installed = {"c", "cpp", "lua", "vim", "vimdoc", "markdown", "markdown_inline", "java", "javadoc", "javascript", "json", "html", "python"},
+          --ensure_installed = {"lua", "vim", "vimdoc", "markdown", "markdown_inline", "java", "javadoc", "javascript", "json", "html", "python"},
+          ensure_installed = {"markdown", "markdown_inline"},
           highlight = {
             enable = true,
             additional_vim_regex_highlighting = false,
@@ -202,7 +234,28 @@ require("lazy").setup({
       dependencies = {
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets"
-      }
+      },
+      -- require'lspconfig'.lua_ls.setup {
+      --   settings = {
+      --     lua = {
+      --       runtime = {
+      --         version = 'LuaJIT',
+      --       },
+      --       diagnostics = {
+      --         globals = {
+      --           'vim',
+      --           'require'
+      --         },
+      --         workspace = {
+      --           library = vim.api.nvim_get_runtime_file("", true),
+      --         },
+      --         telemetry = {
+      --           enable = false,
+      --         },
+      --       },
+      --     },
+      --   },
+      -- }
     },
     {
       "hrsh7th/nvim-cmp",
@@ -271,7 +324,7 @@ require("lazy").setup({
           end
         )
 
-        require("lazy-lsp").setup {}
+        require("lazy-lsp").setup{}
       end,
     },
     --[[{

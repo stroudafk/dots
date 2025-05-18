@@ -1,7 +1,9 @@
-vim.opt.number=true
-vim.opt.relativenumber=true
-vim.opt.syntax="on"
-vim.opt.showmatch=true --highlight matching brackets
+--------------------OPTIONS--------------------
+
+vim.o.number=true
+vim.o.relativenumber=true
+vim.o.syntax="on"
+vim.o.showmatch=true --highlight matching brackets
 vim.o.showmode = false
 
 -- fix lsp not recognizing library = vim.api.nvim_get_runtime_file("", true),
@@ -11,13 +13,14 @@ vim.o.showmode = false
 --   },
 -- })
 
-vim.opt.termguicolors=true
+vim.o.termguicolors=true
 
 -- indent settings
-vim.opt.tabstop=2 --number of spaces a tab counts for and maybe shows as?
-vim.opt.shiftwidth=0 -- num of spaces to use for each step of indent
-vim.opt.expandtab=true
-vim.opt.autoindent=true --keep indent level on new line
+vim.o.tabstop=2 --number of spaces a tab counts for and maybe shows as?
+vim.o.shiftwidth=0 -- num of spaces to use for each step of indent
+vim.o.expandtab=true
+vim.o.autoindent=true --keep indent level on new line
+vim.o.cindent=true -- indent based on language. should always have auto indent when this is on
 
 vim.opt.splitright=true
 vim.opt.splitbelow=true
@@ -33,7 +36,7 @@ vim.o.smartcase = true
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
-vim.opt.mouse = 'a' --enable mouse support?
+vim.o.mouse = 'a' --enable mouse support?
 
 -- limit results in lsp list
-vim.opt.pumheight = 15
+vim.o.pumheight = 15

@@ -14,8 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export SUDO_EDITOR=nvim
 export EDITOR=nvim
 
-# Path to hyprshot save directory
-#export HYPRSHOT_DIR="$HOME/screenshots"
+alias nv='nvim '
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,

@@ -24,7 +24,20 @@ require("lazy").setup({
   -- add visual yank plugin
   spec = {
     -- plugins here
-    { import = "plugins" },
+    { import = "plugins.autopairs" },
+    { import = "plugins.alpha" },
+    { import = "plugins.lualine" },
+    { import = "plugins.fzf-lua" },
+    { import = "plugins.comment" },
+    { import = "plugins.todo-comments" },
+    { import = "plugins.neo-tree" },
+    { import = "plugins.render-markdown" },
+    { import = "plugins.catppuccin" },
+    { import = "plugins.treesitter" },
+    { import = "plugins.luasnip" },
+    { import = "plugins.nvim-cmp" },
+    { import = "plugins.lspconfig" },
+    { import = "plugins.lazy-lsp" },
   },
   -- other settings here
   -- automatically check for plugin updates, but only once a day

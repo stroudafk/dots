@@ -1,6 +1,6 @@
 -- Defaults for LSP servers and auto launch LSP for respective filetype
 -- vim.lsp.enable('marksman')
---[[ vim.lsp.config['luals'] = {
+vim.lsp.config['luals'] = {
   -- Command and arguments to start the server.
   cmd = { 'lua-language-server' },
   -- Filetypes to automatically attach to.
@@ -22,7 +22,7 @@
     }
   }
 }
-vim.lsp.enable('luals') ]]
+-- vim.lsp.enable('luals')
 return
 {
   "neovim/nvim-lspconfig",

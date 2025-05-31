@@ -34,7 +34,3 @@ vim.keymap.set('i', '<A-Up>', '<Esc><cmd>m-2<CR>==gi', { desc = 'Move line up'})
 vim.keymap.set('i', '<A-Down>', '<Esc><cmd>m+<CR>==gi', { desc = 'Move line down'})
 
 --------------------VISUAL MODE--------------------
-vim.keymap.set('v', '<A-Up>', "<cmd>m '<-2<CR>gv=gv", { desc = 'Move line up'})
-vim.keymap.set('v', '<A-Down>', "<cmd>m '>+1<CR>gv=gv", { desc = 'Move line down'})
-
--- TODO: find some way to exit terminal mode easily

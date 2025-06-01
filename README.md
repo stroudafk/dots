@@ -1,7 +1,20 @@
 # dotfiles
+
+## Dependencies
+1. fzf (for fzf.lua)
+2. updated tree sitter parsers (run :TSUpdate , or if that doesn't work, :TSUninstall markdown , then :TSInstall markdown)
+    if receiving an error like: `error executing vim.schedule lua callback`
+    - You will also need to install lua-language-server, ltex-ls (for md files) with brew (on macos. nixos should handle the dependencies for these on its own)
+3. tpm (for tmux plugins)
+4. Nix (for lazy-lsp)
+
+---
+
+Below is my methodology for tracking changes to my dotfiles as of 5/27/2025.
+
 You can read about methods to track changes in your dotfiles [here](https://dotfiles.github.io/tutorials/).
 
-In the end, I decided to go with GNU Stow. I am of the opinion that for practical projects, it is best to keep things simple until complexity is required. This opinion influenced me to turn my .config directory into a git repository and then add everything * to the .gitignore, and git add -f explicity everything that I want to inclue to avoid tracking things I am not interested in, or contains too much personal information. However, this method means that I would be unable to track anything that exists outside of my dotfiles, like my Hyprland config, my NixOS configuration, and my .zshrc configuration. These caveats led me to search for another solution.
+In the end, I decided to go with GNU Stow. I am of the opinion that for practical projects, it is best to keep things simple until complexity is required. This opinion influenced me to turn my .config directory into a git repository and then add everything * to the .gitignore, and git add -f explicitly everything that I want to include to avoid tracking things I am not interested in, or contains too much personal information. However, this method means that I would be unable to track anything that exists outside of my dotfiles, like my Hyprland config, my NixOS configuration, and my .zshrc configuration. These caveats led me to search for another solution.
 
 ## GNU Stow
 This version control tree is designed with Stow in mind. It can be used without, though it involves a lot of manual copying and syncing to facilitate changes and to get things working as intended.

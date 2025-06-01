@@ -1,5 +1,12 @@
 # dotfiles
 
+Note to self: considering alternatives to stow, as I had some issues with stow forgetting it had created some symlinks and not understanding the home. Unsure if this was user error or not.
+
+## Composing dots when system configurations are slightly different
+Recently, I realized that dotfiles between systems are not entirely identical. For example, tpm on mac requires .zshrc to set environment path, but this breaks the tmux config on linux. I am exploring another method of creating and tracking configurations where you specify the device specific items in one file (ideally the default file location), and specify common, shared items in another file to be sourced in the distinct file. This way, applications can still auto append context specific items to the file (and sometimes common things, which can be moved out manually after verifying symmetry).
+
+Be careful of source and destination (also working directory path) when stowing due to device differences. For example, zsh-mac or zsh-linux?
+
 ## Dependencies
 1. fzf (for fzf.lua)
 2. updated tree sitter parsers (run :TSUpdate , or if that doesn't work, :TSUninstall markdown , then :TSInstall markdown)

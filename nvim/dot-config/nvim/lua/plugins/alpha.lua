@@ -27,6 +27,12 @@ return {
       [[                                                                       ]],
     }
 
+    dashboard.section.header.opts = {
+      position = "center",
+      hl = "Keyword",
+      -- hl groups are: Type, Keyword, Constant, String, Function, Title, Comment
+    }
+
     dashboard.section.buttons.val = {
       -- Set menu     󱦟
       dashboard.button("n", "󰝒  > New file", ":ene <BAR> startinsert <CR>"),

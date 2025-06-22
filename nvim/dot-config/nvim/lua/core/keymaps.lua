@@ -28,8 +28,8 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- resize splits with (meta) alt + <,>,s,f
-vim.keymap.set("n", "<M-.>", "<C-w>5<", { desc = "Move buffer divider line left"})
-vim.keymap.set("n", "<M-,>", "<C-w>5>", { desc = "Move buffer divider line right"})
+vim.keymap.set("n", "<M-,>", "<C-w>5<", { desc = "Move buffer divider line left"})
+vim.keymap.set("n", "<M-.>", "<C-w>5>", { desc = "Move buffer divider line right"})
 vim.keymap.set("n", "<M-f>", "<C-w>+", { desc = "Move (float) buffer divider line up"})
 vim.keymap.set("n", "<M-s>", "<C-w>-", { desc = "Move (sink) buffer divider line down"})
 

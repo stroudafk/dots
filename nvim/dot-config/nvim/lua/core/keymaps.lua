@@ -34,6 +34,12 @@ vim.keymap.set("n", "<M-,>", "<C-w>5<", { desc = "Shrink vertical viewport 5 col
 vim.keymap.set("n", "<M-s>", "<C-w>+", { desc = "Expand viewport"})
 vim.keymap.set("n", "<M-f>", "<C-w>-", { desc = "Shrink viewport"})
 
+-- center cursor after some vertical movement
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
 --------------------INSERT MODE--------------------
 -- easy Esc on normie boards
 vim.keymap.set("i", "jj", "<Esc>")

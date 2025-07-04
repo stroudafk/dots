@@ -38,6 +38,7 @@ require("lazy").setup({
     { import = "plugins.nvim-cmp" },
     { import = "plugins.lspconfig" },
     { import = "plugins.lazy-lsp" },
+    { import = "plugins.yazi" },
   },
   -- other settings here
   -- automatically check for plugin updates, but only once a day

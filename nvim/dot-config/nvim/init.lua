@@ -30,7 +30,6 @@ require("lazy").setup({
     { import = "plugins.fzf-lua" },
     { import = "plugins.comment" },
     { import = "plugins.todo-comments" },
-    { import = "plugins.neo-tree" },
     { import = "plugins.render-markdown" },
     { import = "plugins.catppuccin" },
     { import = "plugins.treesitter" },

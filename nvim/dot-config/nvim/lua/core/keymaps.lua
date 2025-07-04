@@ -36,7 +36,7 @@ vim.keymap.set("n", "<M-f>", "<C-w>-", { desc = "Shrink viewport"})
 
 --------------------INSERT MODE--------------------
 -- easy Esc on normie boards
-vim.keymap.set("i", "jj", "<Esc")
+vim.keymap.set("i", "jj", "<Esc>")
 
 -- move line above/below and match indent
 vim.keymap.set("i", "<A-Up>", "<Esc><cmd>m-2<CR>==gi", { desc = "Move line up"})

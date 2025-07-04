@@ -14,6 +14,8 @@ Be careful of source and destination (also working directory path) when stowing 
     - You will also need to install lua-language-server, ltex-ls (for md files) with brew (on macos. nixos should handle the dependencies for these on its own)
 3. tpm (for tmux plugins)
 4. Nix (for lazy-lsp)
+5. yazi
+6. neovim 0.11.0 or later for yazi.nvim
 
 ---
 

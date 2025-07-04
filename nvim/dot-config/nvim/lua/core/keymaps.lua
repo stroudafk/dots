@@ -5,7 +5,7 @@ vim.g.mapleader=" "
 -- "ap to paste/put
 
 --------------------NORMAL MODE--------------------
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", {desc = "Toggle NeoTree"})
+-- vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", {desc = "Toggle NeoTree"})
 vim.keymap.set("n", "<leader>f", function()
   require("fzf-lua").files()
 end, { desc = "fzf: Find files"})

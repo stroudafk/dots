@@ -62,6 +62,7 @@ vim.keymap.set("n", "Y", "y$", { desc = "Yank to end of line" })
 
 -- delete without yanking
 vim.keymap.set("n", "<leader>d", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set("n", "<leader>D", '"_d$', { desc = "Delete without yanking" })
 
 -- buffer nav
 vim.keymap.set("n", "<leader>bn", ":bn", { desc = "Next buffer" })

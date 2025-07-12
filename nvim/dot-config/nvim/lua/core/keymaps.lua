@@ -30,6 +30,10 @@ end, { desc = "fzf: Find files" })
 -- clear search results highlights upon esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 
+-- go to middle of line (may want to use this bind for "go to last mark" instead)
+-- alternative is :call cursor(0, len(getline('.'))/2)
+vim.keymap.set("n", "<leader>", "gM", { desc = "Go to middle of line" })
+
 -- add empty line below and above lines with leader o O
 vim.keymap.set("n", "<leader>o", "mzo<Esc>0D`z", { desc = "Add empty space/line below" })
 vim.keymap.set("n", "<leader>O", "mzO<Esc>0D`z", { desc = "Add empty space/line above" })

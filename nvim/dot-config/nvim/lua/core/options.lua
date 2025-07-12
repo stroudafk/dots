@@ -31,6 +31,9 @@ vim.opt.title=true
 vim.opt.laststatus=2 --to show status bar at bottom of window. change to 3 to have it update for the current/active instance or buffer
 vim.opt.cursorline=true -- highlight line where cursor is
 
+-- cursor appearance
+-- vim.opt.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/1Cursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+
 -- case insentitive searching unless \C or capital letters included in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -42,3 +45,11 @@ vim.o.mouse = 'a' --enable mouse support?
 
 -- limit results in lsp list
 vim.o.pumheight = 15
+
+-- highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("UserConfig", {}),
+  callback = function ()
+    vim.highlight.on_yank()
+  end,
+})

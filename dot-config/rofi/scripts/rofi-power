@@ -24,8 +24,8 @@ case $chosen in
   ;;
 "$lock")
   # Install swaylock-effects for better configuration
-  # hyprlock
-  swaylock -f
+  hyprlock
+  # swaylock -f
   ;;
 "$suspend")
   # mpc -q pause

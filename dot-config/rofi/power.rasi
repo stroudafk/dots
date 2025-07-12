@@ -4,7 +4,7 @@ configuration {
   disable-history:      true;
 }
 
-//@import "../mocha"
+@import "../mocha"
 
 window {
   width: 15%;
@@ -19,17 +19,23 @@ window {
   border-radius: 10px;
   spacing: 0px;
   children: [ mainbox ];
+  // color: @base;
+  // background-color: @transparent;
 }
 
 mainbox {
   spacing: 3px;
   children: [ listview ];
+  // border-color: @transparent;
+  // border: @transparent;
 }
+
 inputbar {
   spacing: 3px;
   /*padding: top right bottom left*/
   padding: 0px;
   children: [ "textbox-prompt-colon", entry ];
+  // border-color: @blue;
 }
 
 textbox-prompt-colon {
@@ -57,10 +63,14 @@ listview {
   /* List view has the dash border, Remove it here */
   border: 0px;
   border-radius: 0px;
+  // color style
+  // background-color: @base;
+  // border-color: @blue;
 }
 
 element {
   border: 0px;
   border-radius: 10px;
   padding: 5px;
+  // color: @blue;
 }
